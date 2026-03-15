@@ -16,7 +16,7 @@
 <div class="gallery">
 
 <div class="art painting">
-  <img src="images/facebyg1.jpeg" onclick="openViewer(this)">
+  <img src="images/facebyg1.jpeg" class="art-img" onclick="openViewer(this)">
   <div class="art-info">
     <h3>Qbizzum</h3>
     <p>Acrylic on Paper</p>
@@ -27,7 +27,7 @@
 </div>
 
 <div class="art painting">
-  <img src="images/facebyg2.jpeg" onclick="openViewer(this)">
+  <img src="images/facebyg2.jpeg" class="art-img" onclick="openViewer(this)">
   <div class="art-info">
     <h3>Qbizzum</h3>
     <p>Acrylic on Paper</p>
@@ -38,7 +38,7 @@
 </div>
 
 <div class="art painting">
-  <img src="images/facebyg3.jpeg" onclick="openViewer(this)">
+  <img src="images/facebyg3.jpeg" class="art-img" onclick="openViewer(this)">
   <div class="art-info">
     <h3>Qbizzum</h3>
     <p>Acrylic on Paper</p>
@@ -49,7 +49,7 @@
 </div>
 
 <div class="art painting">
-  <img src="images/facebyg4.jpeg" onclick="openViewer(this)">
+  <img src="images/facebyg4.jpeg" class="art-img" onclick="openViewer(this)">
   <div class="art-info">
     <h3>Qbizzum</h3>
     <p>Acrylic on Paper</p>
@@ -60,7 +60,7 @@
 </div>
 
 <div class="art painting">
-  <img src="images/facebyg5.jpeg" onclick="openViewer(this)">
+  <img src="images/facebyg5.jpeg" class="art-img" onclick="openViewer(this)">
   <div class="art-info">
     <h3>Qbizzum</h3>
     <p>Acrylic on Paper</p>
@@ -71,7 +71,7 @@
 </div>
 
 <div class="art painting">
-  <img src="images/facebyg6.jpeg" onclick="openViewer(this)">
+  <img src="images/facebyg6.jpeg" class="art-img" onclick="openViewer(this)">
   <div class="art-info">
     <h3>Qbizzum</h3>
     <p>Acrylic on Paper</p>
@@ -82,7 +82,7 @@
 </div>
   
 <div class="art painting">
-  <img src="images/facebyg7.jpeg" onclick="openViewer(this)">
+  <img src="images/facebyg7.jpeg" class="art-img" onclick="openViewer(this)">
   <div class="art-info">
     <h3>Qbizzum</h3>
     <p>Acrylic on Paper</p>
@@ -93,7 +93,7 @@
 </div>
 
 <div class="art painting">
-  <img src="images/facebyg8.jpeg" onclick="openViewer(this)">
+  <img src="images/facebyg8.jpeg" class="art-img" onclick="openViewer(this)">
   <div class="art-info">
     <h3>Qbizzum</h3>
     <p>Acrylic on Paper</p>
@@ -104,7 +104,7 @@
 </div>
 
 <div class="art painting">
-  <img src="images/blocksbyg9.jpeg" onclick="openViewer(this)">
+  <img src="images/blocksbyg9.jpeg" class="art-img" onclick="openViewer(this)">
   <div class="art-info">
     <h3>Qbizzum</h3>
     <p>Acrylic on Paper</p>
@@ -115,7 +115,7 @@
 </div>
 
 <div class="art painting">
-  <img src="images/treesbyg10.jpeg" onclick="openViewer(this)">
+  <img src="images/treesbyg10.jpeg" class="art-img" onclick="openViewer(this)">
   <div class="art-info">
     <h3>Qbizzum</h3>
     <p>Acrylic on Paper</p>
@@ -126,7 +126,7 @@
 </div>
 
 <div class="art painting">
-  <img src="images/facebyg11.jpeg" onclick="openViewer(this)">
+  <img src="images/facebyg11.jpeg" class="art-img" onclick="openViewer(this)">
   <div class="art-info">
     <h3>Qbizzum</h3>
     <p>Acrylic on Paper</p>
@@ -137,7 +137,7 @@
 </div>
 
 <div class="art painting">
-  <img src="images/facebyg12.jpeg" onclick="openViewer(this)">
+  <img src="images/facebyg12.jpeg" class="art-img" onclick="openViewer(this)">
   <div class="art-info">
     <h3>Qbizzum</h3>
     <p>Acrylic on Paper</p>
@@ -148,7 +148,10 @@
 </div>
   
 </div>
-
+<div id="viewer" class="viewer">
+<span class="close" onclick="closeViewer()">×</span>
+<img id="viewer-img">
+</div>
 <div id="footer"></div>
 <script src="script.js"></script>
 </body>
