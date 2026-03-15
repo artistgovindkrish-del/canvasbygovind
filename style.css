@@ -30,9 +30,10 @@ color:black;
 text-decoration:none;
 }
 
-.about{
-padding:60px;
+.artist{
 text-align:center;
+padding:80px 20px;
+background:#111;
 }
 
 .gallery{
