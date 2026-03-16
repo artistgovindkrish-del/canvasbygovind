@@ -32,7 +32,7 @@ function closeViewer(){
 }
 
 /*Start Pagination*/
-const itemsPerPage = 6;
+const itemsPerPage = 12;
 const galleryItems = document.querySelectorAll(".gallery .art");
 const pagination = document.getElementById("pagination");
 
