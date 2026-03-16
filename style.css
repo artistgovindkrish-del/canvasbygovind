@@ -28,7 +28,7 @@ text-decoration:none;
 }
 
 .hero{
-height:90vh;
+height:120vh;
 background:url("images/sample1.jpeg") center/cover no-repeat;
 display:flex;
 align-items:center;
