@@ -48,6 +48,23 @@ function filterArt(category){
 }
 /*End filter*/
 
+/*Start search box*/
+function searchArtworks(){
+  const input=document.getElementById("searchArt").value.toLowerCase();
+  const artworks=document.querySelectorAll(".art");
+
+  artworks.forEach(item=>{
+	const title=item.querySelector("h3").innerText.toLowerCase();
+
+	if(title.includes(input)){
+	  item.style.display="block";
+	}else{
+	  item.style.display="none";
+	}
+  });
+}
+/*End search box*/
+
 /*Start Pagination*/
 const itemsPerPage = 12;
 const galleryItems = document.querySelectorAll(".gallery .art");
@@ -85,3 +102,13 @@ function setupPagination(){
 }
 setupPagination();
 /*End Pagination*/
+
+/*Start Inquiry*/
+function inquireArt(title){
+
+  const message=`Hello, I am interested in the artwork: ${title}`;
+  const whatsapp=`https://wa.me/917827662454?text=${encodeURIComponent(message)}`;
+
+  window.open(whatsapp,"_blank");
+}
+/*End Inquiry*/
