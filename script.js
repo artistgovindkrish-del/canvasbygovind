@@ -31,6 +31,23 @@ function closeViewer(){
   document.getElementById("viewer").style.display="none";
 }
 
+/*Start filter by category*/
+function filterArt(category){
+  const items=document.querySelectorAll(".art");
+
+  items.forEach(item=>{
+
+	if(category==="all"){
+	  item.style.display="block";
+	}else if(item.classList.contains(category)){
+	  item.style.display="block";
+	}else{
+	  item.style.display="none";
+	}
+  });
+}
+/*End filter*/
+
 /*Start Pagination*/
 const itemsPerPage = 12;
 const galleryItems = document.querySelectorAll(".gallery .art");
