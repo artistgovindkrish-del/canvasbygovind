@@ -66,7 +66,7 @@ function searchArtworks(){
 /*End search box*/
 
 /*Start Pagination*/
-const itemsPerPage = 12;
+const itemsPerPage = 10;
 const galleryItems = document.querySelectorAll(".gallery .art");
 const pagination = document.getElementById("pagination");
 
