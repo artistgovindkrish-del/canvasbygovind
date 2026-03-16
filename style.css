@@ -169,3 +169,20 @@ color:black;
 background:#c9a55c;
 color:black;
 }
+
+.filters{
+text-align:center;
+margin:30px;
+}
+.filters button{
+background:#111;
+color:white;
+border:1px solid #444;
+padding:8px 15px;
+margin:5px;
+cursor:pointer;
+}
+.filters button:hover{
+background:#c9a55c;
+color:black;
+}
