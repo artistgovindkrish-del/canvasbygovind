@@ -106,8 +106,8 @@ setupPagination();
 /*Start Inquiry*/
 function inquireArt(title){
 
-  const message=`Hello, I am interested in the artwork: ${title}`;
-  const whatsapp=`https://wa.me/917827662454?text=${encodeURIComponent(message)}`;
+  const message="Hello, I am interested in the artwork: ${title}";
+  const whatsapp="https://wa.me/917827662454?text=${encodeURIComponent(message)}";
 
   window.open(whatsapp,"_blank");
 }
