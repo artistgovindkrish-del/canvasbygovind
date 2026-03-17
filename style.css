@@ -98,7 +98,8 @@ display:block;
 
 .collection{
 padding:80px 20px;
-background:#f8f8f8;
+background:#111;
+color:white;
 }
 .collection-container{
 display:flex;
@@ -110,18 +111,23 @@ flex-wrap:wrap;
 /* TEXT LEFT */
 .collection-text{
 flex:1;
-max-width:300px;
+max-width:500px;
 }
 /* IMAGE RIGHT */
 .collection-image{
-flex:1;
+/*flex:1;
 display:flex;
-justify-content:center;
+justify-content:center;*/
+padding:10px;
+background:#222;
+border-radius:12px;
 }
 .collection-image img{
 width:100%;
-max-width:400px;
+height:auto;
 border-radius:10px;
+object-fit:cover;
+transition:0.4s;
 }
 
 .collection-image{
