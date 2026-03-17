@@ -110,14 +110,10 @@ flex-wrap:wrap;
 }
 /* TEXT LEFT */
 .collection-text{
-flex:1;
 max-width:500px;
 }
 /* IMAGE RIGHT */
 .collection-image{
-/*flex:1;
-display:flex;
-justify-content:center;*/
 padding:10px;
 background:#222;
 border-radius:12px;
