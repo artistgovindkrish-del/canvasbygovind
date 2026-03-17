@@ -349,7 +349,6 @@ gap:50px;
 flex-wrap:wrap;
 }
 .contact-image{
-flex:1;
 display:flex;
 justify-content:center;
 }
@@ -360,7 +359,6 @@ border-radius:10px;
 object-fit:cover;
 }
 .contact-form{
-flex:1;
 max-width:450px;
 }
 .contact-form h2{
