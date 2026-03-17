@@ -31,7 +31,7 @@ text-decoration:none;
 height:100vh;
 background:url("images/sample1.jpeg") no-repeat center center;
 background-size:cover;
-background-position:center;
+background-position:center top;
 display:flex;
 align-items:center;
 justify-content:center;
