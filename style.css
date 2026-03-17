@@ -96,6 +96,38 @@ border-radius:12px;
 display:block;
 }
 
+.collection{
+padding:80px 20px;
+background:#f8f8f8;
+}
+.collection-container{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:50px;
+flex-wrap:wrap;
+}
+/* TEXT LEFT */
+.collection-text{
+max-width:500px;
+}
+/* IMAGE RIGHT */
+.collection-image img{
+width:100%;
+max-width:400px;
+border-radius:10px;
+object-fit:cover;
+}
+
+.collection-image{
+background:#222;
+padding:10px;
+border-radius:12px;
+}
+.collection-image img{
+display:block;
+}
+
 @media(max-width:768px){
   .hero{
 	height:70vh;
@@ -106,6 +138,13 @@ display:block;
   }
   .artist-image img{
 	width:80%;
+	max-width:90%;
+  }
+  .collection-container{
+	flex-direction:column;
+	text-align:center;
+  }
+  .collection-image img{
 	max-width:90%;
   }
 }
