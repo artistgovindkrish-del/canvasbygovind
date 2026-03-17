@@ -29,7 +29,7 @@ text-decoration:none;
 
 .hero{
 height:100vh;
-background:url("images/hero-art.jpg") no-repeat center center;
+background:url("images/sample1.jpeg") no-repeat center center;
 background-size:cover;
 background-position:center;
 display:flex;
