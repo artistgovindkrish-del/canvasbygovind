@@ -28,8 +28,10 @@ text-decoration:none;
 }
 
 .hero{
-height:120vh;
-background:url("images/sample1.jpeg") center/cover no-repeat;
+height:100vh;
+background:url("images/hero-art.jpg") no-repeat center center;
+background-size:cover;
+background-position:center;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -61,9 +63,52 @@ padding:40px;
 }
 
 .artist{
-text-align:center;
 padding:80px 20px;
 background:#111;
+color:white;
+}
+.artist-container{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:50px;
+flex-wrap:wrap;
+}
+.artist-image img{
+width:100%;
+max-width:400px;
+height:auto;
+border-radius:10px;
+object-fit:cover;
+transition:0.4s;
+}
+.artist-image img:hover{
+transform:scale(1.05);
+}
+.artist-text{
+max-width:500px;
+}
+.artist-image{
+padding:10px;
+background:#222;
+border-radius:12px;
+}
+.artist-image img{
+display:block;
+}
+
+@media(max-width:768px){
+  .hero{
+	height:70vh;
+  }
+  .artist-container{
+	flex-direction:column;
+	text-align:center;
+  }
+  .artist-image img{
+	width:80%;
+	max-width:90%;
+  }
 }
 
 .gallery{
