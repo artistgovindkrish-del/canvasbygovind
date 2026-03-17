@@ -109,14 +109,19 @@ flex-wrap:wrap;
 }
 /* TEXT LEFT */
 .collection-text{
-max-width:500px;
+flex:1;
+max-width:300px;
 }
 /* IMAGE RIGHT */
+.collection-image{
+flex:1;
+display:flex;
+justify-content:center;
+}
 .collection-image img{
 width:100%;
 max-width:400px;
 border-radius:10px;
-object-fit:cover;
 }
 
 .collection-image{
