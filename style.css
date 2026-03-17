@@ -33,6 +33,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 background:#000;
+position:relative;
 }
 .hero-img{
 max-width:100%;
@@ -42,6 +43,9 @@ object-fit:contain;
 .hero-text{
 background:rgba(0,0,0,0.5);
 padding:40px;
+position:absolute;
+color:white;
+text-align:center;
 }
 .btn{
 background:#c9a55c;
