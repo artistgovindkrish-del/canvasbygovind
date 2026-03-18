@@ -169,7 +169,6 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
 padding:30px;
 }
-
 .art{
 background:white;
 border-radius:8px;
@@ -336,6 +335,59 @@ border-color:#c9a55c;
 box-shadow:0 3px 10px rgba(0,0,0,0.15);
 }
 
+/*About us page*/
+.about-hero {
+  height: 70vh;
+  background: url('images/about-bg.jpg') center/cover no-repeat;
+  position: relative;
+}
+.overlay {
+  background: rgba(0,0,0,0.7);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.about-grid {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+.timeline-item {
+  border-left: 2px solid #ff6600;
+  padding-left: 20px;
+  margin: 20px 0;
+}
+.awards-grid, .spec-grid {
+  display: flex;
+  gap: 20px;
+}
+.award-card, .spec-card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.award-card:hover, .spec-card:hover {
+  transform: translateY(-5px);
+  background: #222;
+}
+.about-cta {
+  text-align: center;
+  padding: 50px;
+  background: linear-gradient(45deg, #ff6600, #ff3300);
+  color: #fff;
+}
+.btn {
+  background: #000;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+/*Contact us page*/
 .contact-section{
 padding:80px 20px;
 background:#111;
