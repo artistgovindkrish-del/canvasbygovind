@@ -192,12 +192,12 @@ padding:18px;
 text-align:center;
 border-top:1px solid #eee;
 }
-.art-info h3{
+.featured .gallery, .art-info h3{
 font-size:18px;
 margin-bottom:6px;
 color:#222;
 }
-.art-info p{
+.featured .gallery, .art-info p{
 font-size:14px;
 color:#666;
 margin:4px 0;
