@@ -22,13 +22,19 @@
 	  <div class="contact-form">
 		<h2>Collector Inquiry</h2>
 		<p>Interested in acquiring an artwork? Send your inquiry.</p>
-		<form>
-		  <input type="text" placeholder="Your Name" required>
-		  <input type="email" placeholder="Your Email" required>
-		  <input type="text" placeholder="Artwork Name / ID">
-		  <textarea placeholder="Your Message"></textarea>
+		<form action="https://formsubmit.co/your-email@gmail.com" method="POST">
+		  <input type="text" name="name" placeholder="Your Name" required>
+		  <input type="email" name="email" placeholder="Your Email" required>
+		  <input type="text" name="artwork" placeholder="Artwork Name / ID">
+		  <textarea name="message" placeholder="Your Message"></textarea>
+		  <!-- Hidden settings -->
+		  <input type="hidden" name="_subject" value="New Art Inquiry!">
+		  <input type="hidden" name="_captcha" value="false">
+		  <input type="hidden" name="_template" value="table">
 		  <button type="submit">Send Inquiry</button>
+		  <input type="hidden" name="_next" value="https://artistgovindkrish-del.github.io/canvasbygovind/thankyou.html">
 		</form>
+		<a href="https://wa.me/917827662454?text=Hello, I am interested in your artwork" target="_blank" class="whatsapp-btn">Chat on WhatsApp</a>
 	  </div>
 	</div>
   </section>
