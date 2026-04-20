@@ -12,10 +12,12 @@
 
   <h2 class="center">Art Collection</h2>
   <div class="filters">
-	<button onclick="filterArt('all')">All</button>
-	<button onclick="filterArt('paperface')">Color Faces</button>
-	<button onclick="filterArt('acrylic')">Acrylic</button>
-	<button onclick="filterArt('pencilface')">Pencil Faces</button>
+	<button data-filter="all">All</button>
+	<button data-filter="paperface">Color Faces</button>
+	<button data-filter="acrylic">Acrylic</button>
+	<button data-filter="pencilface">Pencil Faces</button>
+	<button data-filter="painting">Paintings</button>
+	<button data-filter="sculpture">Sculptures</button>
   </div>
   <div class="search-box">
 	<input type="text" id="searchArt" placeholder="Search artworks..." onkeyup="searchArtworks()">
