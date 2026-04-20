@@ -10,6 +10,11 @@ document.querySelectorAll(".art").forEach(el=>{
   observer.observe(el);
 });
 
+document.querySelectorAll(".filters button").forEach(btn=>{
+  btn.classList.remove("active");
+});
+event.target.classList.add("active");
+
 <!--fetch header & footer html file-->
 fetch("header.html")
 .then(response => response.text())
@@ -33,18 +38,17 @@ function closeViewer(){
 
 /*Start filter by category*/
 function filterArt(category){
-  const items=document.querySelectorAll(".art");
+  filteredItems = [];
+  allItems.forEach(item=>{
 
-  items.forEach(item=>{
-
-	if(category==="all"){
-	  item.style.display="block";
-	}else if(item.classList.contains(category)){
+	if(category==="all" || item.classList.contains(category)){
+	  filteredItems.push(item);
 	  item.style.display="block";
 	}else{
 	  item.style.display="none";
 	}
   });
+  setupPagination(); // 🔥 rebuild pagination
 }
 /*End filter*/
 
@@ -98,20 +102,6 @@ function setupPagination(){
 	pagination.appendChild(btn);
   }
   showPage(1);
-}
-
-function filterArt(category){
-  filteredItems = [];
-  allItems.forEach(item=>{
-
-	if(category==="all" || item.classList.contains(category)){
-	  filteredItems.push(item);
-	  item.style.display="block";
-	}else{
-	  item.style.display="none";
-	}
-  });
-  setupPagination(); // 🔥 rebuild pagination
 }
 /*End Pagination*/
 
