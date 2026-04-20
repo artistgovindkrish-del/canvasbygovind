@@ -66,41 +66,41 @@ function searchArtworks(){
 /*End search box*/
 
 /*Start Pagination*/
-const itemsPerPage = 6;
-const galleryItems = document.querySelectorAll(".gallery .art");
+let itemsPerPage = 6;
+let allItems = document.querySelectorAll(".gallery .art");
+let filteredItems = [...allItems];
+let currentPage = 1;
+
 const pagination = document.getElementById("pagination");
 
 function showPage(page){
+  currentPage = page;
+
   const start = (page-1)*itemsPerPage;
   const end = start + itemsPerPage;
 
-  galleryItems.forEach((item,index)=>{
+  filteredItems.forEach((item,index)=>{
 	item.style.display = (index>=start && index<end) ? "block":"none";
   });
-
-  document.querySelectorAll("#pagination button").forEach(btn=>{
-	btn.classList.remove("active");
-  });
-
-  document.querySelector(`#pagination button[data-page="${page}"]`).classList.add("active");
 }
 
 function setupPagination(){
-  const pageCount = Math.ceil(galleryItems.length/itemsPerPage);
+  pagination.innerHTML = ""; // clear old buttons
+
+  const pageCount = Math.ceil(filteredItems.length/itemsPerPage);
 
   for(let i=1;i<=pageCount;i++){
+
 	const btn = document.createElement("button");
-
 	btn.innerText = i;
-	btn.setAttribute("data-page",i);
 
-	btn.addEventListener("click",()=>showPage(i));
-
+	btn.addEventListener("click",()=>{
+	  showPage(i);
+	});
 	pagination.appendChild(btn);
   }
   showPage(1);
 }
-setupPagination();
 /*End Pagination*/
 
 /*Start Inquiry*/
