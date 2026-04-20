@@ -11,9 +11,29 @@ document.querySelectorAll(".art").forEach(el=>{
 });
 
 document.querySelectorAll(".filters button").forEach(btn=>{
-  btn.classList.remove("active");
+  btn.addEventListener("click", function(){
+  const category = this.getAttribute("data-filter");
+
+  /* filter logic */
+  filteredItems = [];
+
+  allItems.forEach(item=>{
+	if(category==="all" || item.classList.contains(category)){
+	  filteredItems.push(item);
+	  item.style.display="block";
+    }else{
+	  item.style.display="none";
+	}
+  });
+
+  /* active class */
+  document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+  this.classList.add("active");
+
+  setupPagination();
 });
-event.target.classList.add("active");
+
+});
 
 <!--fetch header & footer html file-->
 fetch("header.html")
@@ -114,4 +134,3 @@ function inquireArt(title){
   window.open(whatsapp,"_blank");
 }
 /*End Inquiry*/
-setupPagination();
