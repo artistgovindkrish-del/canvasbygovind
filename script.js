@@ -1,4 +1,18 @@
-const observer=new IntersectionObserver(entries=>{
+document.addEventListener("DOMContentLoaded", function(){
+
+/* ===============================
+   GLOBAL VARIABLES
+================================= */
+const itemsPerPage = 6;
+let allItems = document.querySelectorAll(".gallery .art");
+let filteredItems = [...allItems];
+let currentPage = 1;
+const pagination = document.getElementById("pagination");
+
+/* ===============================
+   SCROLL ANIMATION
+================================= */
+const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
       entry.target.classList.add("show");
@@ -10,93 +24,21 @@ document.querySelectorAll(".art").forEach(el=>{
   observer.observe(el);
 });
 
-document.querySelectorAll(".filters button").forEach(btn=>{
-  btn.addEventListener("click", function(){
-  const category = this.getAttribute("data-filter");
-
-  /* filter logic */
-  filteredItems = [];
-
-  allItems.forEach(item=>{
-	if(category==="all" || item.classList.contains(category)){
-	  filteredItems.push(item);
-	  item.style.display="block";
-    }else{
-	  item.style.display="none";
-	}
-  });
-
-  /* active class */
-  document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
-  this.classList.add("active");
-
-  setupPagination();
-});
-
-});
-
-<!--fetch header & footer html file-->
-fetch("header.html")
-.then(response => response.text())
-.then(data => {
-  document.getElementById("header").innerHTML = data;
-});
-fetch("footer.html")
-.then(response => response.text())
-.then(data => {
-  document.getElementById("footer").innerHTML = data;
-});
-
-<!--Open viewer to enlage images-->
-function openViewer(img){
+/* ===============================
+   FULLSCREEN IMAGE VIEWER
+================================= */
+window.openViewer = function(img){
   document.getElementById("viewer").style.display="flex";
   document.getElementById("viewer-img").src=img.src;
 }
-function closeViewer(){
+
+window.closeViewer = function(){
   document.getElementById("viewer").style.display="none";
 }
 
-/*Start filter by category*/
-function filterArt(category){
-  filteredItems = [];
-  allItems.forEach(item=>{
-
-	if(category==="all" || item.classList.contains(category)){
-	  filteredItems.push(item);
-	  item.style.display="block";
-	}else{
-	  item.style.display="none";
-	}
-  });
-  setupPagination(); // 🔥 rebuild pagination
-}
-/*End filter*/
-
-/*Start search box*/
-function searchArtworks(){
-  const input=document.getElementById("searchArt").value.toLowerCase();
-  const artworks=document.querySelectorAll(".art");
-
-  artworks.forEach(item=>{
-	const title=item.querySelector("h3").innerText.toLowerCase();
-
-	if(title.includes(input)){
-	  item.style.display="block";
-	}else{
-	  item.style.display="none";
-	}
-  });
-}
-/*End search box*/
-
-/*Start Pagination*/
-let itemsPerPage = 6;
-let allItems = document.querySelectorAll(".gallery .art");
-let filteredItems = [...allItems];
-let currentPage = 1;
-
-const pagination = document.getElementById("pagination");
-
+/* ===============================
+   PAGINATION
+================================= */
 function showPage(page){
   currentPage = page;
 
@@ -104,33 +46,123 @@ function showPage(page){
   const end = start + itemsPerPage;
 
   filteredItems.forEach((item,index)=>{
-	item.style.display = (index>=start && index<end) ? "block":"none";
+    item.style.display = (index>=start && index<end) ? "block":"none";
   });
+
+  // active button highlight
+  document.querySelectorAll("#pagination button").forEach(btn=>{
+    btn.classList.remove("active");
+  });
+
+  if(document.querySelector(`#pagination button:nth-child(${page})`)){
+    document.querySelector(`#pagination button:nth-child(${page})`).classList.add("active");
+  }
 }
 
 function setupPagination(){
-  pagination.innerHTML = ""; // clear old buttons
-  const pageCount = Math.ceil(filteredItems.length/itemsPerPage);
 
-  for(let i=1;i<=pageCount;i++){
-	const btn = document.createElement("button");
-	btn.innerText = i;
+  if(!pagination) return;
 
-	btn.addEventListener("click",()=>{
-	  showPage(i);
-	});
-	pagination.appendChild(btn);
+  pagination.innerHTML = "";
+
+  const pageCount = Math.ceil(filteredItems.length / itemsPerPage);
+
+  if(pageCount <= 1){
+    pagination.style.display = "none";
+    return;
+  } else {
+    pagination.style.display = "block";
   }
+
+  for(let i=1; i<=pageCount; i++){
+    const btn = document.createElement("button");
+    btn.innerText = i;
+
+    btn.addEventListener("click", ()=>{
+      showPage(i);
+    });
+
+    pagination.appendChild(btn);
+  }
+
   showPage(1);
 }
-/*End Pagination*/
 
-/*Start Inquiry*/
-function inquireArt(title){
+/* ===============================
+   FILTER
+================================= */
+document.querySelectorAll(".filters button").forEach(btn=>{
+  btn.addEventListener("click", function(){
 
-  const message="Hello, I am interested in the artwork: ${title}";
-  const whatsapp="https://wa.me/917827662454?text=${encodeURIComponent(message)}";
+    const category = this.getAttribute("data-filter");
 
-  window.open(whatsapp,"_blank");
+    filteredItems = [];
+
+    allItems.forEach(item=>{
+      if(category === "all" || item.classList.contains(category)){
+        filteredItems.push(item);
+      }
+    });
+
+    // active button UI
+    document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+    this.classList.add("active");
+
+    setupPagination();
+  });
+});
+
+/* ===============================
+   SEARCH
+================================= */
+window.searchArtworks = function(){
+
+  const input = document.getElementById("searchArt").value.toLowerCase();
+
+  filteredItems = [];
+
+  allItems.forEach(item=>{
+    const title = item.querySelector("h3").innerText.toLowerCase();
+
+    if(title.includes(input)){
+      filteredItems.push(item);
+    }
+  });
+
+  setupPagination();
 }
-/*End Inquiry*/
+
+/* ===============================
+   INQUIRY (WHATSAPP)
+================================= */
+window.inquireArt = function(title){
+
+  const message = `Hello, I am interested in the artwork: ${title}`;
+  const whatsapp = `https://wa.me/917827662454?text=${encodeURIComponent(message)}`;
+
+  window.open(whatsapp, "_blank");
+}
+
+/* ===============================
+   HEADER / FOOTER LOAD
+================================= */
+fetch("header.html")
+.then(res => res.text())
+.then(data => {
+  const header = document.getElementById("header");
+  if(header) header.innerHTML = data;
+});
+
+fetch("footer.html")
+.then(res => res.text())
+.then(data => {
+  const footer = document.getElementById("footer");
+  if(footer) footer.innerHTML = data;
+});
+
+/* ===============================
+   INITIAL LOAD
+================================= */
+setupPagination();
+
+});
