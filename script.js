@@ -86,11 +86,9 @@ function showPage(page){
 
 function setupPagination(){
   pagination.innerHTML = ""; // clear old buttons
-
   const pageCount = Math.ceil(filteredItems.length/itemsPerPage);
 
   for(let i=1;i<=pageCount;i++){
-
 	const btn = document.createElement("button");
 	btn.innerText = i;
 
@@ -100,6 +98,20 @@ function setupPagination(){
 	pagination.appendChild(btn);
   }
   showPage(1);
+}
+
+function filterArt(category){
+  filteredItems = [];
+  allItems.forEach(item=>{
+
+	if(category==="all" || item.classList.contains(category)){
+	  filteredItems.push(item);
+	  item.style.display="block";
+	}else{
+	  item.style.display="none";
+	}
+  });
+  setupPagination(); // 🔥 rebuild pagination
 }
 /*End Pagination*/
 
@@ -112,3 +124,4 @@ function inquireArt(title){
   window.open(whatsapp,"_blank");
 }
 /*End Inquiry*/
+setupPagination();
