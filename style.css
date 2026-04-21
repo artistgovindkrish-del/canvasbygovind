@@ -18,10 +18,36 @@ padding:20px;
 text-align:center;
 }
 
-nav a{
+/*nav a{
 color:white;
 margin:15px;
 text-decoration:none;
+}*/
+.navbar {
+  display: flex;
+  gap: 20px;
+  background: #111;
+  padding: 15px;
+}
+.dropdown {
+  position: relative;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: #222;
+  top: 30px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.dropdown-menu a {
+  display: block;
+  padding: 8px;
+  color: white;
+  text-decoration: none;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 .hero{
