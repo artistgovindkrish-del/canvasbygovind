@@ -25,27 +25,47 @@ text-decoration:none;
 }
 .navbar {
   display: flex;
-  gap: 20px;
+  gap: 30px;
   background: #111;
-  padding: 15px;
+  padding: 15px 40px;
+  align-items: center;
+  position: relative; /* IMPORTANT */
+  z-index: 1000;
 }
 .dropdown {
   position: relative;
 }
+.dropbtn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+/* DROPDOWN MENU */
 .dropdown-menu {
   display: none;
   position: absolute;
+  top: 100%;       /* exactly below button */
+  left: 0;
   background: #222;
-  top: 30px;
-  padding: 10px;
-  border-radius: 5px;
+  min-width: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 9999;   /* VERY IMPORTANT */
 }
+/* LINKS */
 .dropdown-menu a {
   display: block;
-  padding: 8px;
+  padding: 10px 15px;
   color: white;
   text-decoration: none;
 }
+/* HOVER EFFECT */
+.dropdown-menu a:hover {
+  background: #333;
+}
+/* SHOW MENU */
 .dropdown:hover .dropdown-menu {
   display: block;
 }
