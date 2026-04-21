@@ -18,11 +18,11 @@ padding:20px;
 text-align:center;
 }
 
-/*nav a{
+nav a{
 color:white;
 margin:15px;
 text-decoration:none;
-}*/
+}
 .navbar {
   display: flex;
   gap: 20px;
