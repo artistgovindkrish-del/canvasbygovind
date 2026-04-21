@@ -25,12 +25,15 @@ text-decoration:none;
 }
 .navbar {
   display: flex;
-  gap: 30px;
-  background: #111;
-  padding: 15px 40px;
   align-items: center;
-  position: relative; /* IMPORTANT */
-  z-index: 1000;
+  justify-content: space-between; /* logo left */
+  padding: 15px 40px;
+  background: #111;
+}
+/* LOGO */
+.logo {
+  font-size: 20px;
+  color: white;
 }
 .dropdown {
   position: relative;
