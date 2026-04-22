@@ -94,6 +94,22 @@ min-height: 100vh;
 .dropdown:hover .dropdown-menu {
   display: block;
 }
+.submenu {
+  padding: 10px;
+  border-bottom: 1px solid #333;
+}
+.submenu span {
+  display: block;
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 5px;
+}
+.submenu a {
+  display: block;
+  padding: 6px;
+  text-decoration: none;
+  color: white;
+}
 /* MOBILE MENU BUTTON */
 .menu-toggle {
   display: none;
