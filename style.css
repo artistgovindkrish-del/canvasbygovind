@@ -138,6 +138,12 @@ min-height: 100vh;
   .header-center {
     text-align: center;
   }
+  .product img {
+    height: 200px;
+  }
+  .featured h2 {
+    font-size: 22px;
+  }
 }
 
 .hero{
@@ -166,6 +172,106 @@ font-weight:bold;
 section{
 padding:80px 20px;
 text-align:center;
+}
+
+/* SECTION */
+.featured {
+  padding: 60px 20px;
+  background: #0f0f0f;
+  text-align: center;
+}
+/* TITLE */
+.featured h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+/* FILTER BUTTONS */
+.filters {
+  margin-bottom: 30px;
+}
+.filters button {
+  padding: 8px 18px;
+  margin: 5px;
+  border: none;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+.filters button:hover,
+.filters button.active {
+  background: #ff6600;
+}
+/* GRID */
+.featured .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+}
+/* CARD */
+.product {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.4s;
+  position: relative;
+}
+/* IMAGE */
+.product img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: 0.4s;
+}
+/* CONTENT */
+.product h3 {
+  margin: 10px 0 5px;
+  color: #fff;
+}
+.product p {
+  color: #ccc;
+  margin-bottom: 10px;
+}
+/* PRICE */
+.product .price {
+  color: #ff6600;
+  font-weight: bold;
+}
+/* HOVER EFFECT */
+.product:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+.product:hover img {
+  transform: scale(1.05);
+}
+/* ADD TO CART BUTTON */
+.product button {
+  margin-bottom: 15px;
+  padding: 8px 15px;
+  background: #ff6600;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.product button:hover {
+  background: #e65c00;
+}
+.product::before {
+  content: "Featured";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: gold;
+  color: black;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 5px;
 }
 
 .featured .gallery{
