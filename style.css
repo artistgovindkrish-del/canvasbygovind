@@ -32,9 +32,7 @@ text-decoration:none;
 }
 /* LOGO */
 .logo {
-  font-size: 20px;
-  color: white;
-  height: 40px;
+  height: 120px;
 }
 .dropdown {
   position: relative;
