@@ -165,4 +165,7 @@ fetch("footer.html")
 ================================= */
 setupPagination();
 
+  function toggleMenu() {
+     document.getElementById("navMenu").classList.toggle("show");
+  }
 });
