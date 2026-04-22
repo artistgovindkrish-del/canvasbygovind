@@ -34,6 +34,7 @@ text-decoration:none;
 .logo {
   font-size: 20px;
   color: white;
+  height: 40px;
 }
 .dropdown {
   position: relative;
