@@ -35,12 +35,14 @@ min-height: 100vh;
 .title {
   color: white;
   margin: 5px 0;
+  margin-bottom: 10px;
 }
 /* NAVBAR CENTER */
 .navbar {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 30px;
+  margin-top: 5px;
 }
 /* LINKS */
 .navbar a, .dropbtn {
@@ -49,17 +51,45 @@ min-height: 100vh;
   background: none;
   border: none;
   cursor: pointer;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  transition: 0.3s;
+}
+.navbar a:hover, .dropbtn:hover {
+  color: #ff6600;
 }
 /* DROPDOWN */
 .dropdown {
   position: relative;
+  display: flex;
+  align-items: center;
+}
+.dropbtn {
+  font-size: 16px;       /* match nav links */
+  font-family: inherit;  /* same font */
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 .dropdown-menu {
   display: none;
   position: absolute;
+  top: 110%;   /* little gap below */
+  left: 50%;
+  transform: translateX(-50%); /* center align under Gallery */
+  
   background: #222;
-  top: 100%;
-  left: 0;
+  border-radius: 8px;
+  min-width: 180px;
+  padding: 8px 0;
+  z-index: 999;
+}
+/* LINKS INSIDE */
+.dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  text-align: center;
 }
 .dropdown:hover .dropdown-menu {
   display: block;
