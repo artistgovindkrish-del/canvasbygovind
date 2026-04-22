@@ -1,18 +1,30 @@
-<header>
-  <img src="images/logo.png" class="logo">
-  <h1 class="title">Govind's Artwork</h1>
-  <nav class="navbar">
-  	<a href="index.html">Home</a>
-  	<a href="about.html">About Us</a>
-  	<div class="dropdown">
-  	  <button class="dropbtn">Gallery ▾</button>
+<header class="header">
+  <!-- LEFT LOGO -->
+  <div class="logo-box">
+    <img src="images/logo.png" class="logo">
+  </div>
 
-  	  <div class="dropdown-menu">
-        <a href="#faces">Face Sketches</a>
-        <a href="#acrylic">Acrylic Paintings</a>
-        <a href="#sculpture">Metal Sculptures</a>
-	    </div>
-  	</div>
-    <a href="contact.html">Contact Us</a>
-  </nav>
+  <!-- CENTER CONTENT -->
+  <div class="header-center">
+    <h1 class="title">Govind's Artwork</h1>
+
+    <nav class="navbar" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">Gallery ▾</button>
+        <div class="dropdown-menu">
+          <a href="#faces">Face Sketches</a>
+          <a href="#acrylic">Acrylic Paintings</a>
+          <a href="#sculpture">Metal Sculptures</a>
+        </div>
+      </div>
+
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </div>
+
+  <!-- MOBILE MENU BUTTON -->
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </header>
